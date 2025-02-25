@@ -10,13 +10,13 @@ def train_logistic_regression(train_features, train_labels):
     """
     Trains a Logistic Regression model on the training dataset.
     """
-    print("\n🚀 Training Logistic Regression Model...")
+    print("\nTraining Logistic Regression Model...")
 
     # Initialize and train model
     model = LogisticRegression(max_iter=1000, solver="lbfgs")
     model.fit(train_features, train_labels)
 
-    print("✅ Model Training Complete!")
+    print("Model Training Complete!")
 
     return model
 
@@ -25,7 +25,7 @@ def evaluate_model(model, test_features, test_labels):
     """
     Evaluates the model on test data.
     """
-    print("\n📊 Evaluating Model...")
+    print("Evaluating Model...")
 
     # Make predictions
     predictions = model.predict(test_features)
@@ -35,10 +35,10 @@ def evaluate_model(model, test_features, test_labels):
     conf_matrix = confusion_matrix(test_labels, predictions)
     class_report = classification_report(test_labels, predictions)
 
-    print(f"✅ Model Accuracy: {accuracy:.4f}")
-    print("\n🔹 Confusion Matrix:")
+    print(f"Model Accuracy: {accuracy:.4f}")
+    print("\nConfusion Matrix:")
     print(conf_matrix)
-    print("\n🔹 Classification Report:")
+    print("\nClassification Report:")
     print(class_report)
 
     return predictions
@@ -50,11 +50,11 @@ def save_model(model, filename="models/logistic_regression.pkl"):
     """
     model_dir = os.path.dirname(filename)
 
-    # ✅ Ensure directory exists
+    # Ensure directory exists
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
-        print(f"📂 Created directory: {model_dir}")
+        print(f"Created directory: {model_dir}")
 
-    # 💾 Save the model
+    # Save the model
     joblib.dump(model, filename)
-    print(f"\n✅ Model saved successfully at: {filename}")
+    print(f"\nModel saved successfully at: {filename}")

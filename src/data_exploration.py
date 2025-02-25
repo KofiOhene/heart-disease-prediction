@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 def plot_outliers(df):
     """
     Plots boxplots for numerical columns to detect outliers.
@@ -16,13 +17,14 @@ def plot_outliers(df):
 
     plt.show()
 
+
 def explore_data(df):
     """
     Performs exploratory data analysis.
     """
-    print("\n🔄 Checking for Outliers...")
+    print("\nChecking for Outliers...")
     plot_outliers(df)
 
-def check_sex_column(df):
-    print("🔍 Unique values in 'sex' column:", df["sex"].unique())
 
+def check_sex_column(df):
+    print("Unique values in 'sex' column:", df["sex"].unique())
